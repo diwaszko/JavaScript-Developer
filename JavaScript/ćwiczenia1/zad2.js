@@ -1,6 +1,6 @@
 // 2)	Calculate factorial of 7.
 
-let factorial = 9;
+let factorial = 7;
 let sum = 1;
 
 for ( i = factorial; i > 0; i-- ){
