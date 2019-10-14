@@ -1,4 +1,4 @@
-// From years in array check for leap years [1974, 1900, 1985, 2000]
+// 1)	From years in array check for leap years [1974, 1900, 1985, 2000]
 
 let years = [1974, 1900, 1985, 2000, 2004];
 
