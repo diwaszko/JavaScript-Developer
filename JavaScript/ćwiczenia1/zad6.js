@@ -13,6 +13,6 @@ for ( let i = 0; i < items.length; i++ ){
     if ( items[i] == highest ){
         index.push(i);
     }       
-}
+};
 console.log('Indices: ' + index);
 
