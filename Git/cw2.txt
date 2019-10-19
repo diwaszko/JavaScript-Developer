@@ -1,0 +1,9 @@
+git remote add origin https://github.com/diwaszko/CwiczeniaGit.github
+
+git clone (link do repo)   - klonowanie repo z githuba
+git branch (nazwa brancha) -
+
+WAŻNE - przed każdym git push zrobić git pull, a jeszcze wcześniej koniczenie! commit -m 'komentarz'
+git branch -a    - wyświetla wszystkie branche (wcześniej zrobić pull jeżeli branch zrobiony był na githubie)
+git checkout develop                   - zmiana na branch o wybranej wcześniej nazwie (w tym przypadku develop)
+git branch -a

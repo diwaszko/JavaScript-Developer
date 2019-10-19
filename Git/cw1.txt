@@ -1,0 +1,30 @@
+https://git-scm.com/ - strona do pobrania GITa
+
+ls -lista folderow i plikow
+cd - zmiana folderu
+cd .. - zmiana folderu pietro wyzej
+mkdir nazwa - utworzenie nowego folderu
+git init -inicjalizacja Gita
+git -config -global user.name "Imię i Nazwisko"         - zawsze trzeba wprowadzic, bo bedzie problem przy commitach
+git -config -global user.email mail@mail.com       - zawsze trzeba wprowadzic, bo bedzie problem przy commitach
+git config --get user.name                              - sprawdzanie imienia i nazwiska 
+git config --get user.email                              - sprawdzanie e-maila
+git status - pokazuje informacje o statusie gita
+git add nazwa pliku                           - dodaje plik do śledzenia (tab podpowiada pliki)
+git add .                                    - dodaje WSZYSTKIE pliki do śledzenia (poza tymi z gitignore)
+git add nazwa_folderu/                      - dodaje cały folder do śledzenia
+git -commit -m "WIADOMOŚĆ DO COMMITA"       - ważne, aby dodawać wiadomość
+git log                                     - wypisuje cała historę commitów
+git rm --cached moj_nichciany_plik          - usuniecie pliku
+    w git logu:
+        q                            - wychodzenie z git loga
+        spacja /enter                 - nastepna linia /lub wyswietlenie wszystkiego z git loga
+git log --graph --pretty=oneline       - ładny git log w 1 linii (skrócony)
+
+Wychodzenie z przypadkowego git commit, gdy przeniesie nas do dziwnego terminala:       - UWAGA
+ctrl + C oraz :qa! i enter
+
+Git Fork         - klient Gita (szybki)
+Gitlab Own Serve - daje możliwość postawienia Gita na własnym serwerze
+
+https://git-scm.com/book/pl/v2 poczytać o Gitcie
