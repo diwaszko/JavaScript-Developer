@@ -6,4 +6,5 @@ git branch (nazwa brancha) -
 WAŻNE - przed każdym git push zrobić git pull, a jeszcze wcześniej koniczenie! commit -m 'komentarz'
 git branch -a    - wyświetla wszystkie branche (wcześniej zrobić pull jeżeli branch zrobiony był na githubie)
 git checkout develop                   - zmiana na branch o wybranej wcześniej nazwie (w tym przypadku develop)
-git branch -a
+git branch -d nazwa_brancha            - usuwa branch
+git branch -b nazwa_brancha            - przechodzi do brancha "nazwa_brancha", a jeżeli nie ma to tworzy nowy o tej nazwie
