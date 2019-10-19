@@ -2,24 +2,15 @@
 
 let items = [1,6,23,8,4,98,3,7,3,98,4,98];
 let avg = 0;
-let fakeAvg = 0;
 let evenNumbers = 0;
-let fakeEvenNumbers = 0;
+let index = [];
 
-for ( i = 0; i < items.length; i++ ){
-    if (( items.indexOf( items[i] ) % 2 == 0 ) && ( i != 0 )){
-        avg = avg + items.indexOf( items[i] );
+for ( let i = 0; i < items.length; i++ ){
+    index.push(i);
+    if (( index[i] % 2 == 0 ) && ( i != 0 )){
+        avg = avg + index[i];
         ++evenNumbers;
     }
 };
 avg = avg / evenNumbers;
-console.log('Real avg: ' + avg);
-
-for ( i = 0; i < items.length; i++ ){
-    if (( i % 2 == 0 ) && ( i != 0 )){
-        fakeAvg = fakeAvg + i;
-        ++fakeEvenNumbers;
-    }
-};
-fakeAvg = fakeAvg / fakeEvenNumbers;
-console.log('Fake avg: ' + fakeAvg);
+console.log('Average value: ' + avg);

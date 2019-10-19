@@ -3,7 +3,7 @@
 let factorial = 7;
 let sum = 1;
 
-for ( i = factorial; i > 0; i-- ){
+for ( let i = factorial; i > 0; i-- ){
     sum = sum * i;
 };
 console.log(sum);
