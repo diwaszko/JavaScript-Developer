@@ -5,11 +5,12 @@ let items = [1,6,23,8,4,98,3,7,3,98,4,98];
 let value = 0;
 
 for ( let i = 0; i < items.length; i++ ){
-    if ( items[i] % 2 == 0 ){
-        value = value + items[i];
+    let indexValue = items[i];
+    if ( indexValue % 2 == 0 ){
+        value = value + indexValue;
     }
     else{
-        value = value - items[i];       
+        value = value - indexValue;       
     }
 };
 console.log('Result: ' + value);

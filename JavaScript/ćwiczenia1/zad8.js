@@ -1,4 +1,4 @@
-// 8)Calculate average value of items at even indexes. Zero is not considered to be even number. [1,6,23,8,4,98,3,7,3,98,4,98]
+// 8) Calculate average value of items at even indexes. Zero is not considered to be even number. [1,6,23,8,4,98,3,7,3,98,4,98]
 
 let items = [1,6,23,8,4,98,3,7,3,98,4,98];
 let avg = 0;
