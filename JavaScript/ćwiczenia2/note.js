@@ -23,4 +23,3 @@ console.log(x);
 // < > oznacza typ generyczny (ze trzyma inny typ)
 
 // PRZEJRZEC DOKUMENTACJE ARRAY W MOZZILI !!!!!!!!! PRZECZYTAC
-//cos nowego
