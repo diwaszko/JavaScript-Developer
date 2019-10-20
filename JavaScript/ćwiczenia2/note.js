@@ -13,7 +13,7 @@ console.log(najmniejszaWartosc);
 let x = 10;
 let y = 20;
 function hoistingPrzyklad(){
-    console.log(x);             // ta wartość będzie undifined przez hoisting
+    console.log(x);             // ta wartość będzie undifined przez hoisting, bo x jest wywołany zanim nastąpi deklaracja
     let x = 5;                  // ta wartość zostanie zadeklarowana jako scope wewątrz funkcji
     console.log(x);             // ta wartość będzie = 5
 }
