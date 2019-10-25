@@ -5,10 +5,11 @@ let tab = [1,6,23,8,4,8,3,7];
 
 function reorderArray(array){
         let newArray = [];
-        for ( let i = array.length-1; i >= 0; i-- ){
-                let randomEl = array[Math.floor(Math.random()*array.length)];
-                newArray.push(randomEl);
+        for ( let i = 0; i <= array.length; i++ ){
+                let randomEl = Math.floor(Math.random()*array.length);
+                newArray.push(array[randomEl]);
                 array.splice(randomEl, 1);
+                i = 0;
         }
         return newArray;
 }
