@@ -7,9 +7,9 @@ let attemps = 5;
 function randomNumber(array, attemps){
         let attempsTab = [];
         for ( let i = 0; i < attemps; i++ ){
-                attempsTab[i] = array[Math.floor(Math.random()*array.length)];
+                attempsTab[i] = array[Math.floor(Math.random()*array.length)];  // Math.random zwraca liczby z przedziału od 0 do 1 (bez 1)
         }
         console.log(attempsTab);
-        return [Math.min.apply( Math, attempsTab )];
+        return Math.min.apply( Math, attempsTab );
 }
 console.log('Smallest number of array is: ' + randomNumber(tab, attemps));

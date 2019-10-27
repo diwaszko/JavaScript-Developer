@@ -2,7 +2,7 @@
 // 11)	Create a function that will return the current day name in Polish. 
 
 function todayDay() {
-        var date = new Date();
+        let date = new Date();
         let weekDays = ["niedziela","poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota"];
         return weekDays[date.getDay()];
 }
