@@ -19,7 +19,7 @@ dwa();
 // IIFE i closure PRZETESTOWAC W DOMU!!!!!!!!!!
 
 // słowo kluczowe this
-console.log('-----------------');
+console.log('----------------- działanie this');
 
 (function() {
     console.log(this);
@@ -50,20 +50,21 @@ console.log(obj.getOuterId());  // zwróci 3, bo nie ma wartości w scope funkcj
 
 // metoda "call" jest to działanie na funkcji (nie polega na wywołaniu funkcji)
 
-console.log('-----------------');
+console.log('----------------- call');
+
 function thisExample(){
     console.log(this);
 }
 
 let obj1 = { x: 1};
 let obj2 = {};
-let obj3 = { arr: [1,2,3]};
+let obj3 = { arr: [1,2,3] };
 
 thisExample.call(obj1);
 thisExample.call(obj2);
 thisExample.call(obj3);
 
-console.log('-----------------');
+console.log('----------------- call i apply');
 
 let obj10 = {
     id: 1,
@@ -72,18 +73,17 @@ let obj10 = {
     }
 };
 let contextObject = { id: 2 };
-console.log(obj10.getId());                             // POCZYTAĆ !!!!
-console.log(obj10.getId.call(contextObject));           // wywołanie z obiektu obj10 wartości obiektu contextObject                                                             - natychmiastowo wywołuje funkcje
-console.log(obj10.getId.apply(contextObject));           //  Funkcja apply ?? - natychmiastowo wywołuje funkcje
-
+console.log('obj10.getId()  ' + obj10.getId());                                        // POCZYTAĆ !!!!
+console.log('obj10.getId.call(contextObject)  ' + obj10.getId.call(contextObject));    // wywołanie z obiektu obj10                                                                                                  wartości obiektu contextObject                                                                                               - natychmiastowo wywołuje funkcje
+console.log('obj10.getId.apply(contextObject)  ' + obj10.getId.apply(contextObject));  //  Funkcja apply - działa tak jak                                                                                               call, ale jako drugi parametr                                                                                                   może przekazać tablicę 
 console.log('----------------- bind');
 
-let newGetId = obj10.getId.bind(contextObject);         //  Funkcja bind - przypisuje funkcje getId
+let newGetId = obj10.getId.bind(contextObject);         //  Funkcja bind - przypisuje do zmiennej newGetId metode getId                                                                 obiektu obj10 do wywołania wartości id z obiektu contextObcet  
 
 console.log(obj10.getId());           
-console.log(newGetId());           
-
-console.log('-----------------');
+console.log(newGetId());                                // wywołanie funkcji przypisanej do zmiennej newGetId metodą bind
+                                                        // bind można wywoływać w różnych miejscach w kodzie wielokrotnie
+console.log('----------------- parametry w funkcji');
 
 
 // Parametry w funkcji
