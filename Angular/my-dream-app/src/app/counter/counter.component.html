@@ -1,0 +1,13 @@
+<h2
+  class="red"
+  [class.red]="count < 5"
+  [class.green]="count > 5"
+  [class.blue]="count > 10"
+  *ngIf="count > 1"
+>
+  {{ count }}
+</h2>
+<!-- aby wykonać zdarzenie trzeba click w () i wywołać funkcję plus() -->
+<button (click)="plus()">plus</button>
+<!-- [disabled] - co ma być zrobione, a w wartości ="" kiedy to zadziała, oprócz tej walidacji trzeba zrobić walidację po stronie serwera -->
+<button (click)="minus()" [disabled]="count == 0">minus</button>
