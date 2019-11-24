@@ -4,7 +4,7 @@ function adding(val1, val2, myCallback){                // myCallback zmienna kt
 }
 
 function subtraction(val1, val2, myCallback){
-    const result = val1 + val2;
+    const result = val1 - val2;
     myCallback(result);
 }
 

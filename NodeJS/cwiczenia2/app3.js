@@ -9,3 +9,4 @@ console.log(_.differenceWith(tabB, tabA, _.isEqual));
 
 console.log(_.difference(tabA, tabB));
 console.log(_.difference(tabB, tabA));
+
