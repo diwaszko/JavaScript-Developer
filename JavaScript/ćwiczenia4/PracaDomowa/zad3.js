@@ -10,15 +10,62 @@ iii.	What type on transaction was having what spending�s.
 iv.	Values of the spending in each month
 v.	Values of the spending in each day of the week
 */
-// function dataBase(){
-//     loadJSON("./Data.json", printFile);
-// }
 
-// let someObject = require("./Data.json");
 
-function printFile(data){
-    // let result = JSON.parse(data);
-    // result.forEach(p => console.log(p));
-    console.log(data);
+let jsonData = require("./Data.json");
+
+
+function returnJsonFromFile(jsonData){
+    return jsonData;
 }
-// printFile(someObject);
+// console.log(returnJsonFromFile(jsonData));
+
+function MainStructure(index, id, cost, detailsOfPayent){
+    this.index = index;
+    this._id = id;
+    this.cost = Number(cost);
+    this.detailsOfPayent = new DetailsOfPayent(
+        detailsOfPayent.Type, 
+        detailsOfPayent.company,
+        detailsOfPayent.date
+    );
+}
+function DetailsOfPayent(type, company, date) {
+    this.Type = type;
+    this.company = company;
+    this.date = date;
+  }
+
+// data.map( (value, index) =>
+// new mainStructure(value.index, value._id, value.cost, detailsOfPayent)
+// );
+
+
+function maptoObjects(objectData) {
+    return objectData.map(
+      (value, index) =>
+        new MainStructure(value.index, value._id, value.cost, value.detailsOfPayent)
+    );
+  }
+  
+  const data = maptoObjects(jsonData);
+
+
+let showSpecificData = {
+    moneySpend: function(data, year){
+      return data
+      .filter(entry => entry.detailsOfPayent.date.split("-")[2] === String(year))
+      .reduce( (accumulator, currentValue) => accumulator + currentValue.cost, 0);
+    },
+    companyEarnings: function(data, year){
+
+    }
+
+}
+
+
+console.log(typeof data[67].cost);
+let resultMoneySpend = showSpecificData.moneySpend(data, 2014);
+console.log(resultMoneySpend.toFixed(2));
+
+

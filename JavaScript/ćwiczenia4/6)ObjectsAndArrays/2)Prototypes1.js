@@ -1,20 +1,20 @@
 // 1 basic prototype
-// function Person(firstName, lastName) {
-//   this.firstName = firstName;
-//   this.lastName = lastName;
-// }
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
 
-// Person.prototype.sayHello = function() {
-//   console.log("Hello from " + this.firstName + " " + this.lastName);
-// };
+Person.prototype.sayHello = function() {
+  console.log("Hello from " + this.firstName + " " + this.lastName);
+};
 
-// let karol = new Person("Karol", "Rogowski");
-// let adam = new Person("Adam", "Tur");
+let karol = new Person("Karol", "Rogowski");
+let adam = new Person("Adam", "Tur");
 
-// console.log(karol, adam);
+console.log(karol, adam);
 
-// karol.sayHello();
-// adam.sayHello();
+karol.sayHello();
+adam.sayHello();
 
 // 2 after object is created
 // function Person(firstName, lastName) {
