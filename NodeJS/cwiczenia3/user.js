@@ -6,6 +6,10 @@ function getUserInfo(id) {
     request(
       url,
       (err, res, body) => {
+        if (res.statusCode === 404) {
+          console.log(`User not found.`);
+          return;
+        }
         if (res.statusCode != 200) {
           console.log(
             `Data not found. Status code: ${res.statusCode}`
@@ -22,9 +26,9 @@ function getUserInfo(id) {
           console.log(userName);
           console.log("Lat:", userLat);
           console.log("Lng:", userLng);
+          
+          weather.getUserWeather(data, userLat, userLng);
         }
-
-    weather.getUserWeather(data);
   });
 }
 

@@ -1,3 +1,9 @@
+// 2. Rozszerzmy aplikację z zadania 1 o wprowadzanie dynamiczne danych które chcemy zapisać do pliku. 
+// W zadaniu tym może być pomocny zewnętrzny moduł yargs.
+// Przykład uruchomienia aplikacji:
+// node app.js --name=Adam --lastName=Mickiewicz
+// Wprowadzane dane powinny być zapisane do pliku.
+
 const fs = require("fs");
 const argv = require("yargs").argv;
 

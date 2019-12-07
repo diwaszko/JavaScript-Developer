@@ -1,3 +1,7 @@
+// 3. Dodajmy do naszej aplikacji z zadania 2 przed nadpisaniem nowymi wartościami, wczytanie już wcześniej zapisanego obiektu. 
+// W konsoli wypiszmy jedynie imię wczytanego użytkownika.
+
+
 const fs = require("fs");
 const argv = require("yargs").argv;
 
