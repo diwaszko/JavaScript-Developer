@@ -55,10 +55,18 @@ let showSpecificData = {
     moneySpend: function(data, year){
       return data
       .filter(entry => entry.detailsOfPayent.date.split("-")[2] === String(year))
-      .reduce( (accumulator, currentValue) => accumulator + currentValue.cost, 0);
+      .reduce( (accumulator, currentValue) => accumulator + currentValue.cost, 0).toFixed(2);
     },
     companyEarnings: function(data, year){
+      // .map(item => item.detail.compay)
+      // .filter(function(item,index,array)){
+      // return array.indexOf(item) === index;
+      // }
+      // let temporaryData = [];
 
+      // data.forEach(name => {
+      //   if (!temporaryData.includes)
+      // })
     }
 
 }
@@ -66,6 +74,6 @@ let showSpecificData = {
 
 console.log(typeof data[67].cost);
 let resultMoneySpend = showSpecificData.moneySpend(data, 2014);
-console.log(resultMoneySpend.toFixed(2));
+console.log(resultMoneySpend);
 
 

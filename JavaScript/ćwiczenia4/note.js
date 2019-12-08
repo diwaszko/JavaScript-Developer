@@ -12,6 +12,7 @@
 // po wylosowaniu/wypisaniu kart warto je posortować, aby łatwiej było sprawdzić układ
 // trzeba stworzyć ok 10 funkcji
 // sprawdzać jakims sposobem, ograniczyć 'if'
+// trzeba wypisać jaki układ i jakie karty są w tym układzie np. Twój układ to para króli lub wysoka karta 7 
 
 /********** Omówienie przykładów z zajęć **********/
 
