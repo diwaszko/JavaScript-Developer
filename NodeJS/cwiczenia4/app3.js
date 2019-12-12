@@ -1,4 +1,4 @@
-// Zadaniem kolejnym jest stworzenie funkcji odejmowania 2 licz z wykorzystaniem Promise. 
+// 3. Zadaniem kolejnym jest stworzenie funkcji odejmowania 2 licz z wykorzystaniem Promise. 
 // Stwórzmy regułę jeżeli wynik działania będzie ujemny Promise powinien zwrócić błąd, 
 // jeżeli wynik jest dodatni Promise powinien się rozwiązać poprawnie przekazując wynik działania.
 

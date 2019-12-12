@@ -36,35 +36,17 @@ const getUser = (id) => {
 
 }
 
-const getWeather = (lat, lng) => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?appid=0ed761300a2725ca778c07831ae64d6e&lat=${lat}&lon=${lng}`;
-    return new Promise((resolve, reject) => {
-        request(
-            url, { json: true },
-            (err, res, body) => {
-                if (!err && res.statusCode === 200) {
-                    resolve(body);
-                } else {
-                    reject("user not found!");
-                }
-            }
-        );
-    });
 
-}
+const userId = [2, 5, 7];
 
-
-getUser(2)
+const usersList = userId.map( (id) => getUser(id) );
+Promise.all(usersList)
     .then((user) =>{
-        console.log(user.name);
-        let lat = user.address.geo.lat;
-        let lng = user.address.geo.lng;   
-
-        return getWeather(lat, lng);
-    })
-    .then(weather => {
-        console.log(weather.main.temp);
+        return user.forEach( (user) => console.log(user.name) );
     })
     .catch(error => { 
         console.log('error', error) 
+    })
+    .finally(() => {
+        console.log('End of Promise!')
     });

@@ -27,7 +27,7 @@ const getUser = (id) => {
     });
 
 }
-getUser(4)
+getUser(2)
     .then((user) => {
         console.log(user.name)
     })

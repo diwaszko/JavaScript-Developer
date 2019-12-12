@@ -1,23 +1,8 @@
-// 5. Dodajmy do naszej aplikacji z zadania 4 pobieranie pogody dla naszego użytkownika. 
-// Podobnie jak w poprzednim laboratorium. Pamiętajmy o odpowiednim owrapowaniu naszego zapytania 
-// do pogody. Analogicznie jak w zadaniu 4.
-// Endpoint do pogody: 
-// https://api.openweathermap.org/data/2.5/weather?appid=0ed761300a2725ca778c07831ae64d6e&lat={lat}&lon={lng}
-// Zarys wywołania aplikacji:
-// ...
-// const getWeather = (lat, lng) => ...
-// getUser(2)
-//     .then(user => {
-//         ...
-//         return getWeather(...)
-//     })
-//     .then(weather => ...)
-//     .catch(...);
-
-// 6. Zmodyfikujmy zadanie 5 tak, aby pobrać kilku użytkowników w tej samej chwili wykorzystując Promise.all(). 
-// Wyświetlmy ich imiona w konsoli. (id użytkowników: 2,5,7). Poinformujmy iż nasz Promise został w pełni rozwiązany.
+// 7. Dodajmy do zadania 5 zapis całego obiektu pogody do pliku wykorzystując wbudowany moduł fs i funkcję writeFile. 
+// Oczywiście zadanie polega na odpowiednim dostosowaniu funkcji aby obsługiwała Promise.
 
 const request = require("request");
+const fs = require("fs");
 
 const getUser = (id) => {
     const url = `https://jsonplaceholder.typicode.com/users/${id}`;
@@ -54,7 +39,7 @@ const getWeather = (lat, lng) => {
 }
 
 
-getUser(2)
+getUser(4)
     .then((user) =>{
         console.log(user.name);
         let lat = user.address.geo.lat;
@@ -63,6 +48,12 @@ getUser(2)
         return getWeather(lat, lng);
     })
     .then(weather => {
+        fs.writeFile('./zapisana_pogoda.json', JSON.stringify(weather), error => {
+           if  (error) {
+                console.log(error.message);
+           } 
+           console.log('File saved!')
+        })
         console.log(weather.main.temp);
     })
     .catch(error => { 
