@@ -1,42 +1,15 @@
 const request = require("request");
-const fs = require("fs");
 
-function getUserWeather(data, userLat, userLng) {
-  const wetaherUrl = `https://api.openweathermap.org/data/2.5/weather?appid=0ed761300a2725ca778c07831ae64d6e&lat=${userLat}&lon=${userLng}`;
+const getWeather = (lat, lng, callback) => {
+  const url = `https://api.openweathermap.org/data/2.5/weather?appid=0ed761300a2725ca778c07831ae64d6e&lat=${lat}&lon=${lng}`;
+  request(url, (error, response, body) => {
+      if (!error && response.statusCode === 200) {
+          const data = JSON.parse(body);
+          callback(data);
+      } else {
+          console.log('Weather not found');
+      }
+  });
+}
 
-  request(
-    wetaherUrl, 
-    (err, res, body) => {
-      if (err) {
-        console.log("Server connection error.");
-        return;
-      }
-      if (res.statusCode === 404) {
-        console.log(`Weather for ${userName} not found.`);
-        return;
-      }
-      if (res.statusCode != 200) {
-        console.log(`Data not found. Status code: ${res.statusCode}`);
-        return;
-      }
-      if (res.statusCode === 200) {
-      const weatherInfo = JSON.parse(body);
-      
-      console.log(weatherInfo.main.temp);
-  
-      const dataToSave = { user: data.name, temp: weatherInfo.main.temp };
-      console.log(dataToSave);
-  
-      fs.writeFile("./data_weather.json", JSON.stringify(dataToSave), error => {
-        if (error) {
-          console.log(error.message);
-          return;
-        }
-  
-        console.log("File saved!");
-      });
-    }
-    });
-  }
-  
-  module.exports = { getUserWeather };
+  module.exports = getWeather;
