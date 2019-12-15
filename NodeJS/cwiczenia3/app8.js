@@ -1,4 +1,4 @@
-// 8. Podzielmy naszą aplikację z punktu 8 na moduły odpowiednio:
+// 8. Podzielmy naszą aplikację z punktu 7 na moduły odpowiednio:
 // app.js – plik główny który uruchomi naszą aplikację i wywoła funkcje z naszego modułu user.js
 // user.js – plik z pobieraniem danych użytkownika
 // weather.js – plik z pobieraniem danych o prognozie pogody

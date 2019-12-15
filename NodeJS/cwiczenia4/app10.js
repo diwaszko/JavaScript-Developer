@@ -21,41 +21,41 @@ const id = argv.id;
 
 const getUser = (userId, callback) => {
     axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`)
-    .then(function (response) {
-        callback(response.data);
-    })
-    .catch(function (error) {
-        console.log(error);
-    })
-    .finally(function () {
-        console.log("User promises done!");
-    });
+        .then(function (response) {
+            callback(response.data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+        .finally(function () {
+            console.log("User promises done!");
+        });
 }
 
 const getAlbum = (albumId, callback) => {
     axios.get(`https://jsonplaceholder.typicode.com/albums?userId=${albumId}`)
-    .then(function (response) {
-        callback(response.data);
-    })
-    .catch(function (error) {
-        console.log(error);
-    })
-    .finally(function () {
-        console.log("Album promises done!");
-    });
+        .then(function (response) {
+            callback(response.data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+        .finally(function () {
+            console.log("Album promises done!");
+        });
 };
 
 const getPhotosTitles = (photoId, callback) => {
     axios.get(`https://jsonplaceholder.typicode.com/photos?albumId=${photoId}`)
-    .then( (response) => {
-        callback(response.data);
-    })
-    .catch( (error) => {
-        console.log(error);
-    })
-    .finally( () => {
-        console.log("Photos titles promises done!");
-    })
+        .then((response) => {
+            callback(response.data);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+        .finally(() => {
+            console.log("Photos titles promises done!");
+        })
 }
 
 getUser(id, (userData) => {
@@ -68,7 +68,7 @@ getUser(id, (userData) => {
     });
     getPhotosTitles(id, (photos) => {
         photos.forEach((val, idx) => {
-            console.log(idx+1, photos[idx].title);
+            console.log(idx + 1, photos[idx].title);
         });
     })
 });

@@ -16,31 +16,37 @@ const id = argv.id;
 
 const getUser = (userId, callback) => {
     axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`)
-    .then(function (response) {
-        callback(response.data);
-    })
-    .catch(function (error) {
-        console.log(error);
-    })
-    .finally(function () {
-        console.log("User promises done!");
-    });
+        .then(function (response) {
+            callback(response.data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+        .finally(function () {
+            console.log("User promises done!");
+        });
 }
 
 const getWeather = (lat, lng, callback) => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?appid=0ed761300a2725ca778c07831ae64d6e&lat=${lat}&lon=${lng}`)
-    .then(function (response) {
-        callback(response.data.weather);
-    })
-    .catch(function (error) {
-        console.log(error);
-    })
-    .finally(function () {
-        console.log("Weather promises done!");
-    });
-}    
+        .then(function (response) {
+            callback(response.data.weather);
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+        .finally(function () {
+            console.log("Weather promises done!");
+        });
+}
 
-
+// const saveFile = (fileName, weather) => {
+//     return new Promise((resolve, reject) => {
+//         fs.writeFile(fileName, JSON.stringify(weather), () => {
+//             resolve('Plik został zapisany');
+//         })
+//     })
+// }
 getUser(id, (userData) => {
     let userLat = userData.address.geo.lat;
     let userLng = userData.address.geo.lng;
@@ -49,10 +55,10 @@ getUser(id, (userData) => {
     getWeather(userLat, userLng, (weather) => {
         console.log(weather);
         fs.writeFile('./zapisana_pogoda-zad8.json', JSON.stringify(weather), error => {
-            if  (error) {
-                 console.log(error.message);
-            } 
+            if (error) {
+                console.log(error.message);
+            }
             console.log('File saved!')
-         })
+        })
     })
 });

@@ -5,19 +5,12 @@
 
 // Zabezpieczmy naszą aplikację tak aby wyłapać błąd prasowania lub odczytu pliku i poinformujmy o tym użytkownika.
 
-const argv = require('yargs').argv;
 const fs = require("fs");
 
-const dodaj = argv.dodaj;
-const lista = argv.lista;
-
-
 try {
-    const user = JSON.parse(fs.readFileSync("./user.json", "UTF-8"));
-
-    console.log(user);
-} catch(error) {
+    const data = fs.readFileSync("./user.json", "UTF-8");
+    const user = JSON.parse(data);
+    console.log(user.name);
+} catch (error) {
     console.log(error.name, error.message);
-} finally {
-    console.log('All done!');
 }

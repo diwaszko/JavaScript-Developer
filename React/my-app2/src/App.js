@@ -1,7 +1,9 @@
 import React from "react";
 import PostMovie from "./components/PostMovie";
-import movies from "./movies.json";
+// import movies from "./movies.json"; // do zadan z 2 weekndu
+import movies from "./movies2.json"; // do zadan z 3 weekendu
 import "./index.css";
+import LanguageContext from "./components/LanguageContext";
 
 const topMovies = movies.filter(movie => movie.rating > 6);
 const badMovies = movies.filter(movie => movie.rating <= 6);
@@ -29,8 +31,11 @@ console.log(topMovies);
 //   ));
 // }
 
+// const genres = Object.keys(moviesByGenre);
+
 function App() {
   return (
+    <LanguageContext.Provider value="en">
     <div>
       <div class="movie-lists">
         <h2>TOP MOVIES:</h2>
@@ -57,15 +62,11 @@ function App() {
           />
         ))}
       </div>
+      
     </div>
+    </LanguageContext.Provider>
 
-    // <div>
-    //   <PostMovie
-    //     title="Joker"
-    //     poster="https://picsum.photos/400?random"
-    //     description="Lorem ipsum dolor"
-    //   />
-    // </div>
+
   );
 }
 

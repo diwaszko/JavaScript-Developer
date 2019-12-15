@@ -1,0 +1,14 @@
+<!-- aby wykorzystać ngModel w pliku app.module.ts trzeba dodac to import { FormsModule } from '@angular/forms';  oraz pod spodem FormsModule-->
+
+<label>
+    Tytuł:
+    <input [(ngModel)]="newTitle" type="text" />
+</label>
+<button (click)="addNewItem()" [disabled]='!newTitle'>Dodaj</button>
+<!-- wyszarzenie przycisku disabled= !newTitle -->
+
+
+<!-- Do pracy domowej dodatkowe pola tj poniższe textarea: -->
+<!-- <label>
+    <textarea [(ngModel)]="newTitle"></textarea>
+</label> -->

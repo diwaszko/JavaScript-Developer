@@ -1,0 +1,25 @@
+<!-- Zawsze musi być $event bo inaczej nie zadziała -->
+<app-news-editor (onAdd)="addItem($event)"></app-news-editor>
+<!-- 1 sposób - [title]="'wartosc'" zeby tego użyć trzeba wpisać u rodzica news-item\news-item.component.ts @input i określić -->
+<!-- <ul>
+    <li>
+        <app-news-item [title]="'warfqr23r3rtosc'"></app-news-item>
+    </li>
+    <li>
+        <app-news-item [title]="'213'"></app-news-item>
+    </li>
+    <li>
+        <app-news-item [title]="'wartosc'"></app-news-item>
+    </li>
+</ul> -->
+
+<!-- 2 sposób, który wyświetla tablicę z pliku news-list.component.ts -->
+<ul>
+    <li *ngFor="let item of news; let i=index">
+        <app-news-item [title]="item" (onRemove)="removeItem(i)"></app-news-item>
+    </li>
+</ul>
+<!-- przycisk, który renderuje się gdy nie ma żadnych elementów (skasujemy je wszystkie) -->
+
+
+<button (click)="ngOnInit()" *ngIf="news.length <= 0">Zainicjuj</button>

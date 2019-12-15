@@ -1,14 +1,26 @@
 import React from "react";
 import Rating from "./Rating";
+import LanguageContext from "../LanguageContext";
+
+
 function PostMovie(props) {
+  const lang = useContext(LanguageContext);
+  
+  const onVoteClick = (i) => {
+    alert("Dzięki, Twoja ocena to: " + i);
+  };
+
   return (
     <div>
-      <h1>{props.title}</h1>
+      <h1>{props.title[lang]}</h1>
       <img src={props.poster}></img>
       <p>
         Ocena: <Rating value={props.rating} />
       </p>
-      <div>{props.description}</div>
+      <p>
+        Twoja Ocena: <Rating value={10} onClick={onVoteClick} />
+      </p>
+      <div>{props.description[lang]}</div>
     </div>
   );
 }

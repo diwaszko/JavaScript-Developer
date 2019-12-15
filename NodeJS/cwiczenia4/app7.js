@@ -37,25 +37,30 @@ const getWeather = (lat, lng) => {
     });
 
 }
+const saveFile = (fileName, weather) => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile(fileName, JSON.stringify(weather), () => {
+            resolve('Plik został zapisany');
+        })
+    })
+}
 
 
-getUser(4)
-    .then((user) =>{
+getUser(2)
+    .then((user) => {
         console.log(user.name);
         let lat = user.address.geo.lat;
-        let lng = user.address.geo.lng;   
+        let lng = user.address.geo.lng;
 
         return getWeather(lat, lng);
     })
     .then(weather => {
-        fs.writeFile('./zapisana_pogoda.json', JSON.stringify(weather), error => {
-           if  (error) {
-                console.log(error.message);
-           } 
-           console.log('File saved!')
-        })
         console.log(weather.main.temp);
+        return saveFile('pogoda-zad7.json', weather);
     })
-    .catch(error => { 
-        console.log('error', error) 
+    .then(text => {
+        console.log(text);
+    })
+    .catch(error => {
+        console.log('error', error)
     });
