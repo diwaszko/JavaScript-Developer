@@ -14,7 +14,8 @@
 //     .then(weather => ...)
 //     .catch(...);
 
-// 6. Zmodyfikujmy zadanie 5 tak, aby pobrać kilku użytkowników w tej samej chwili wykorzystując Promise.all(). Wyświetlmy ich imiona w konsoli. (id użytkowników: 2,5,7). Poinformujmy iż nasz Promise został w pełni rozwiązany.
+// 6. Zmodyfikujmy zadanie 5 tak, aby pobrać kilku użytkowników w tej samej chwili wykorzystując Promise.all(). 
+// Wyświetlmy ich imiona w konsoli. (id użytkowników: 2,5,7). Poinformujmy iż nasz Promise został w pełni rozwiązany.
 
 const request = require("request");
 
@@ -53,27 +54,17 @@ const getWeather = (lat, lng) => {
 }
 
 
-const users = [3, 4, 5];
+getUser(2)
+    .then((user) =>{
+        console.log(user.name);
+        let lat = user.address.geo.lat;
+        let lng = user.address.geo.lng;   
 
-Promise.all(getUser(users)).then((users) => {
-    console.log(users.name)
-    const lat = users.address.geo.lat;
-    const lng = users.address.geo.lng;
-    return getWeather(lat, lng)
-})
-    .then(weather => console.log(weather.main.temp))
-    .catch(error => {
-        console.log('error', error)
+        return getWeather(lat, lng);
+    })
+    .then(weather => {
+        console.log(weather.main.temp);
+    })
+    .catch(error => { 
+        console.log('error', error) 
     });
-
-// getUser(12)
-//     .then((user) => {
-//         console.log(user.name)
-//         const lat = user.address.geo.lat;
-//         const lng = user.address.geo.lng;
-//         return getWeather(lat, lng)
-//     })
-//     .then(weather => console.log(weather.main.temp))
-//     .catch(error => {
-//         console.log('error', error)
-//     });

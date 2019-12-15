@@ -1,36 +1,16 @@
 const request = require("request");
-const weather = require("./weather.js");
 
-function getUserInfo(id) {
-    const url = `https://jsonplaceholder.typicode.com/users/${id}`;
-    request(
-      url,
-      (err, res, body) => {
-        if (res.statusCode === 404) {
-          console.log(`User not found.`);
-          return;
-        }
-        if (res.statusCode != 200) {
-          console.log(
-            `Data not found. Status code: ${res.statusCode}`
-          );
-          return;
-        }
-        if (res.statusCode === 200) {
-          
-          const data = JSON.parse(body);
-          const userName = data.name;
-          const userLat = data.address.geo.lat;
-          const userLng = data.address.geo.lng;
-    
-          console.log(userName);
-          console.log("Lat:", userLat);
-          console.log("Lng:", userLng);
-          
-          weather.getUserWeather(data, userLat, userLng);
-        }
+const getUser = (id, callback) => {
+  const url = `https://jsonplaceholder.typicode.com/users/${id}`;
+  request(url, (error, response, body) => {
+      if (!error && response.statusCode === 200) {
+          const user = JSON.parse(body);
+          callback(user);
+      } else {
+          console.log('User not found');
+      }
   });
 }
 
-module.exports = { getUserInfo };
+module.exports = getUser;
 
