@@ -8,3 +8,10 @@ git branch -a    - wyświetla wszystkie branche (wcześniej zrobić pull jeżeli
 git checkout develop                   - zmiana na branch o wybranej wcześniej nazwie (w tym przypadku develop)
 git branch -d nazwa_brancha            - usuwa branch
 git branch -b nazwa_brancha            - przechodzi do brancha "nazwa_brancha", a jeżeli nie ma to tworzy nowy o tej nazwie
+
+.gitignore - aby dodać pliki lub foldery do nieobserwowanych trzeba stworzyć plik .gitignore (utworzyc pusty plik w notatniku, 
+             a pozniej zapisac - normalnie windows nie pozwoli na zapis bez nazwy)
+W pliku .gitignore:
+                                     np. plik test wpisać nazwe pliku jeżeli chcemy ignorować wszystkie pliki o danej nazwie w danym projekcie
+test lub test.txt lub test.html     (sam test ignoruje wszystkie roszerzenia z tą nazwą)
+folder_test/                        (jezeli chcemy ignorowac caly folder/y o nazwie folder_test/ musi być slash na końcu)

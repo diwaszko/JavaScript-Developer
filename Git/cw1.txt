@@ -15,7 +15,7 @@ git add .                                    - dodaje WSZYSTKIE pliki do śledze
 git add nazwa_folderu/                      - dodaje cały folder do śledzenia
 git -commit -m "WIADOMOŚĆ DO COMMITA"       - ważne, aby dodawać wiadomość
 git log                                     - wypisuje cała historę commitów
-git rm --cached moj_nichciany_plik          - usuniecie pliku
+git rm --cached moj_nichciany_plik          - usuniecie pliku / folderu z trackingu
     w git logu:
         q                            - wychodzenie z git loga
         spacja /enter                 - nastepna linia /lub wyswietlenie wszystkiego z git loga
