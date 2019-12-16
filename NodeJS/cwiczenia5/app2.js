@@ -9,7 +9,6 @@
 
 // Oczywiście stwórzmy przykładowe wywołanie naszej funkcji z blokiem try..catch.
 
-const argv = require('yargs').argv;
 const fs = require("fs");
 
 const div = (a, b) => {

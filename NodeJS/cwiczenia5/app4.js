@@ -14,20 +14,7 @@ const add = async (a, b) => {
     return result;
 }
 
-// sposób z awaitem z IFIE dlatego, że await musi byc zawsze w IFIE - to pomoc do 5 zadania (nie jest gotowe)
-
-(async () => {
-    try {
-        const wynik = await add(2, 3)
-        console.log(wynik);
-    } catch (error) {
-        console.log(error.message);
-    }
-})()
-
-// // sposób bez awaita - wlasciwy dla zadania 4
-
-add(3, 3)
+add(4, 2)
     .then(wynik => {
         console.log('Wynik:', wynik);
     })
