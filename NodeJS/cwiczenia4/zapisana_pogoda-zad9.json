@@ -1,1 +1,1 @@
-["Mrs. Dennis Schulist",[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}]]
+{"coord":{"lon":62.53,"lat":-31.81},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}],"base":"model","main":{"temp":291.25,"feels_like":286.12,"temp_min":291.25,"temp_max":291.25,"pressure":1017,"humidity":73,"sea_level":1017,"grnd_level":1017},"wind":{"speed":8.75,"deg":61},"clouds":{"all":100},"dt":1576532389,"sys":{"sunrise":1576543155,"sunset":1576594337},"timezone":14400,"id":0,"name":"","cod":200}

@@ -1,19 +1,3 @@
-// 5. Dodajmy do naszej aplikacji z zadania 4 pobieranie pogody dla naszego użytkownika. 
-// Podobnie jak w poprzednim laboratorium. Pamiętajmy o odpowiednim owrapowaniu naszego zapytania 
-// do pogody. Analogicznie jak w zadaniu 4.
-// Endpoint do pogody: 
-// https://api.openweathermap.org/data/2.5/weather?appid=0ed761300a2725ca778c07831ae64d6e&lat={lat}&lon={lng}
-// Zarys wywołania aplikacji:
-// ...
-// const getWeather = (lat, lng) => ...
-// getUser(2)
-//     .then(user => {
-//         ...
-//         return getWeather(...)
-//     })
-//     .then(weather => ...)
-//     .catch(...);
-
 // 6. Zmodyfikujmy zadanie 5 tak, aby pobrać kilku użytkowników w tej samej chwili wykorzystując Promise.all(). 
 // Wyświetlmy ich imiona w konsoli. (id użytkowników: 2,5,7). Poinformujmy iż nasz Promise został w pełni rozwiązany.
 

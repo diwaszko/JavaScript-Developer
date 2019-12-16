@@ -59,13 +59,10 @@ getUser(id, (userData) => {
         console.log('Number of albums:', Object.keys(album).length);
         console.log('Title of first album:', firstAlbumName);
         getPhotosTitles(id, (photos) => {
-            let photoTitles = [];
             let shortTitle = firstAlbumName.substring(0, 10);
-
-            photos.forEach((val, idx) => photoTitles.push(photos[idx].title));
-            console.log(photoTitles);
-
-            writeFile(`./${shortTitle}.json`, JSON.stringify(photoTitles))
+            photos.forEach((val, idx) => console.log(val.title));
+                
+            writeFile(`./${shortTitle}.json`, JSON.stringify(photos))
                 .then(() => {
                     console.log('File saved!');
                 })

@@ -14,9 +14,6 @@
 //     .then(weather => ...)
 //     .catch(...);
 
-// 6. Zmodyfikujmy zadanie 5 tak, aby pobrać kilku użytkowników w tej samej chwili wykorzystując Promise.all(). 
-// Wyświetlmy ich imiona w konsoli. (id użytkowników: 2,5,7). Poinformujmy iż nasz Promise został w pełni rozwiązany.
-
 const request = require("request");
 
 const getUser = (id) => {
@@ -45,7 +42,7 @@ const getWeather = (lat, lng) => {
                 if (!err && res.statusCode === 200) {
                     resolve(body);
                 } else {
-                    reject("user not found!");
+                    reject("weather not found!");
                 }
             }
         );
