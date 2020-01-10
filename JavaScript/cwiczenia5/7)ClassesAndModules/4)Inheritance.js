@@ -85,10 +85,11 @@
 // }
 
 // let jsDev = new JsDeveloper(5, "React");
-// //console.log(jsDev);
+// console.log(jsDev);
 // console.log(jsDev.showInfo());
 
 // let per = new Person(1);
+// console.log(per);
 // console.log(per.showInfo());
 
 // 5
@@ -148,28 +149,31 @@
 // console.log(jsDev.showInfo());
 
 //7
-// class Person {
-//   constructor(id) {
-//     this.id = id;
-//     this.type = "basic person";
-//   }
-//   showInfo() {
-//     return `Of type ${this.type} and id ${this.id}`;
-//   }
-// }
+class Person {
+  constructor(id) {
+    this.id = id;
+    this.type = "basic person";
+  }
+  showInfo() {
+    return `Of type ${this.type} and id ${this.id}`;
+  }
+}
 
-// class JsDeveloper extends Person {
-//   constructor(id, framework) {
-//     super(id);
-//     this.type = "JS Developer";
-//     this.framework = framework;
-//   }
+class JsDeveloper extends Person {
+  constructor(id, framework) {
+    super(id);
+    this.type = "JS Developer";
+    this.framework = framework;
+  }
 
-//   showInfo() {
-//     return super.showInfo() + ` and favourite frameworks is ${this.framework}`; // dobrze napisany kod, słówko super tutaj pozwala się odność do rodzica, wybrać pole 
-//   }
-// }
+  showInfo() {
+    return super.showInfo() + ` and favourite frameworks is ${this.framework}`; // dobrze napisany kod, słówko super tutaj pozwala się odność do rodzica, wybrać pole 
+  }
+}
 
-// let jsDev = new JsDeveloper(5, "React");
-// console.log(jsDev);
-// console.log(jsDev.showInfo());
+let jsDev = new JsDeveloper(5, "React");
+let per = new Person(225);
+console.log(jsDev);
+console.log(jsDev.showInfo());
+console.log(per);
+console.log(per.showInfo());

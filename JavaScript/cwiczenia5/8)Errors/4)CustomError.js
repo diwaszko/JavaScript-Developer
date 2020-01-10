@@ -1,4 +1,5 @@
 try {
+  console.log('test');
   throw new Error("Custom application error");
 } catch (error) {
   console.log("error: ", error);

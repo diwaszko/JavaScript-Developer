@@ -14,7 +14,8 @@ dwa();
 dwa();
 
 
-//  wzorzec projektowy "closure" - pozwala na ograniczenie dostępu do nietkorych elementów i ich zmiany (na poziomie wzora kodu, a nie bezpieczeństwa - nie zabezpiecza przed wyciekiem informacji jak np. hasła)
+//  wzorzec projektowy "closure" - pozwala na ograniczenie dostępu do nietkorych elementów i ich zmiany (na poziomie wzora kodu, 
+// a nie bezpieczeństwa - nie zabezpiecza przed wyciekiem informacji jak np. hasła)
 
 // IIFE i closure PRZETESTOWAC W DOMU!!!!!!!!!!
 

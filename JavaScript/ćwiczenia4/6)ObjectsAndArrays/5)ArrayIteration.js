@@ -36,7 +36,7 @@ let people = [
 // console.log(people);
 
 // console.log(people.filter(p => p.birthYear > 1980)); // does it change
-// console.log(people.filter(p => false));
+// console.log(people.filter(p => true));
 // console.log(people.every(p => p.birthYear > 1980)); // sprawdza, czy każdy obiekt zwraca true
 // console.log(people.every(p => p.birthYear >= 1980));
 // console.log(people.some(p => p.birthYear > 1980)); // sprawdza, czy jakikolwiek obiekt zwraca true
@@ -60,15 +60,15 @@ let people = [
 //   .forEach(p => console.log(p));
 
 // //2
-function Person(firstName, lastName, id) {
-  this.id = id;
-  this.firstName = firstName;
-  this.lastName = lastName;
-}
+// function Person(firstName, lastName, id) {
+//   this.id = id;
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+// }
 
-let result = people.map(
-  (p, i) =>
-    new Person(p.name.split(" ")[0], p.name.split(" ")[1], i)
-);
+// let result = people.map(
+//   (p, i) =>
+//     new Person(p.name.split(" ")[0], p.name.split(" ")[1], i)
+// );
 
-console.log(result);
+// console.log(result);

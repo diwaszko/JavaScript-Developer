@@ -7,10 +7,10 @@
 // console.log(karol);
 // console.log(typeof karol);
 // 1,5 new/this
-function Person() {
-  console.log(this);
-  return 1;
-}
+// function Person() {
+//   console.log('this is:',this);
+//   return 1;
+// }
 
 // let karol = new Person(); // tworzy nowy obiekt na podstawie funkcji Person
 // let adam = Person(); // przypisuje wartość zwracaną z funkcji Person do zmiennej adam
@@ -31,20 +31,21 @@ function Person() {
 // let karol = new Person("Karol", "Rogowski");
 // let adam = new Person("Adam", "Goral");
 // console.log(karol);
+// console.log(adam);
+// console.log(adam.firstName);
 
-// 3 METHOD
-// function Person(firstName, lastName) {
-//   this.firstName = firstName;
-//   this.lastName = lastName; // funkcja strzałkowa wyjątkowo działa z this w tym przypadku
-//   this.sayHello = () =>
-//     console.log("Hello from " + this.firstName + " " + this.lastName);
-// }
+// // 3 METHOD
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName; // funkcja strzałkowa wyjątkowo działa z this w tym przypadku
+  this.sayHello = () =>
+    console.log("Hello from " + this.firstName + " " + this.lastName);
+}
 
-// let karol = new Person("Karol", "Rogowski");
-// let adam = new Person();
-// let adam2 = new adam("Nowy", "Adam");
-// console.log(karol);
-// console.log(adam2);
+let karol = new Person("Karol", "Rogowski");
+let adam = new Person("Adam", "Góral");
+console.log(karol);
+console.log(adam);
 
-// karol.sayHello();
-// adam.sayHello();
+karol.sayHello();
+adam.sayHello();

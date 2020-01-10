@@ -7,7 +7,7 @@
 //   error => console.log("rejected: " + error)
 // );
 
-//2 rejected
+// 2 rejected
 
 // var rejestedPromise = Promise.reject(321);
 

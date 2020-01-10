@@ -26,8 +26,8 @@ console.log(
   result.map(p => new Person(p.name.split(" ")[0], p.name.split(" ")[1], p.id))
 );
 
-// console.log(
-//   JSON.parse(apiObject.getPeople()).map(
-//     p => new Person(p.name.split(" ")[0], p.name.split(" ")[1], p.id)
-//   )
-// );
+console.log(
+  JSON.parse(apiObject.getPeople()).map(
+    p => new Person(p.name.split(" ")[0], p.name.split(" ")[1], p.id)
+  )
+);
