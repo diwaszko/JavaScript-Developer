@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; // standardowy router do wyświeltania ścieżki
 // import { MemoryRouter as Router, Route } from 'react-router-dom'; // nie wyświetla dla użytkownika ścieżki (ukrywa ją)
-import error404 from './components/404/404';
+import Error404 from './components/404/404';
 import AboutPage from './components/AboutPage/AboutPage';
 import ContactPage from './components/ContactPage/ContactPage';
 import HomePage from './components/HomePage/HomePage';
@@ -15,14 +15,13 @@ function App() {
     <Router>
       <div>
         <Menu />
-
-        <Switch>                                          {/* wbudowany Switch pozwala na to, aby każdy komponent wyświetlał się tylko na stronie do której pasuje */}
+        <Switch>                                          {/* wbudowany Switch zwraca 1 komponent, który pasuje (reszte pomija) */}
           <Route exact path="/" component={HomePage} /> {/* exact - oznacza, że komponent wyświetla się tylko dla ścieżki '/' bez tego każda strona zawierająca slasha będzie wyświetlała ten komponent */}
           <Route path="/movies" component={MoviesListPage} />
           <Route path="/movie-detail/:id" component={MovieDetailPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/contact" component={ContactPage} />
-          <Route path="*" component={error404} />
+          <Route component={Error404} />
         </Switch>
       </div>
     </Router>
