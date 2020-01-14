@@ -6,13 +6,13 @@ const colors = require("./colors.json");
 
 const createDeck = (cards, colors) => {
     const arrayOfCards = cards.map(oneCard => {
-      return colors.map(oneColor => {
-        return {
-          card: oneCard.card, 
-          order: oneCard.order, 
-          color: oneColor.color
-        }
-      });
+        return colors.map(oneColor => {
+            return {
+                card: oneCard.card,
+                order: oneCard.order,
+                color: oneColor.color
+            }
+        });
     });
     const fullDeck = arrayOfCards.reduce((acc, val) => acc.concat(val));
 
@@ -24,10 +24,10 @@ const randomCards = () => {
     let deckKeys = Object.keys(deckOfCards);
     let handOfCards = [];
     let randomizedId;
-    for (let i = 0; i < 5; i++){
+    for (let i = 0; i < 5; i++) {
         randomizedId = deckKeys.length * Math.random() << 0;
         handOfCards.push(deckOfCards[deckKeys[randomizedId]]);
-        deckKeys.splice(randomizedId,1)
+        deckKeys.splice(randomizedId, 1)
     }
     const sortDeck = (cardA, cardB) => {
         let comparison = 0;
@@ -35,9 +35,9 @@ const randomCards = () => {
         const rightCard = cardB.order;
 
         if (leftCard > rightCard) {
-          comparison = 1;
+            comparison = 1;
         } else if (leftCard < rightCard) {
-          comparison = -1;
+            comparison = -1;
         }
         return comparison;
     };
@@ -46,18 +46,18 @@ const randomCards = () => {
 }
 
 const combinantions = (sortedDeck) => {
-    let cardValues = sortedDeck.map((val, i) => val.card + val.color);   
+    let cardValues = sortedDeck.map((val, i) => val.card + val.color);
 
     const royalFlush = (sortedDeck) => {
         let checkCardsHight = sortedDeck.every((card, i) => card.order >= 9);
 
-        if (!checkCardsHight || !checkedSameColor || !checkedNextCard){
+        if (!checkCardsHight || !checkedSameColor || !checkedNextCard) {
             return false;
-        }else{
+        } else {
             return {
-            val: true,
-            color: checkedColorValue,
-            cardVal: checkedCardValuesToString
+                val: true,
+                color: checkedColorValue,
+                cardVal: checkedCardValuesToString
             }
         }
     }
@@ -65,53 +65,53 @@ const combinantions = (sortedDeck) => {
         let lowStraight = [1, 2, 3, 4, 13];
         let checkCardsLowStraight = sortedDeck.every((val, i) => val.order == lowStraight[i]);
 
-        if (checkCardsLowStraight && checkedSameColor){
+        if (checkCardsLowStraight && checkedSameColor) {
             cardValues.splice(0, 0, cardValues.pop());
             return {
                 val: true,
                 color: checkedColorValue,
                 cardVal: checkedCardValuesToString
             }
-        }else if (!checkedNextCard || !checkedSameColor){
+        } else if (!checkedNextCard || !checkedSameColor) {
             return false;
-        }else{
-            return{
+        } else {
+            return {
                 val: true,
                 color: checkedColorValue,
                 cardVal: checkedCardValuesToString
             }
         }
-    } 
+    }
     const fourOfKind = (sortedDeck) => {
-        if (checkedSameCardsInDeck.fourInDeck){
+        if (checkedSameCardsInDeck.fourInDeck) {
             return {
                 val: true,
                 sameCardVal: checkedSameCardsInDeck.sameCardsArray,
                 cardVal: cardValues
             }
-        }else{
+        } else {
             return false;
         }
     }
-     
+
     const fullHouse = (sortedDeck) => {
-        if (checkedSameCardsInDeck.fullInDeck){
+        if (checkedSameCardsInDeck.fullInDeck) {
             return {
                 val: true,
                 cardVal: checkedCardValuesToString
             }
-        }else{
+        } else {
             return false;
         }
     }
     const flush = (sortedDeck) => {
-        if (!checkedSameColor){
+        if (!checkedSameColor) {
             return false;
-        }else{
+        } else {
             return {
-            val: true,
-            color: checkedColorValue,
-            cardVal: checkedCardValuesToString
+                val: true,
+                color: checkedColorValue,
+                cardVal: checkedCardValuesToString
             }
         }
     }
@@ -120,101 +120,101 @@ const combinantions = (sortedDeck) => {
         let lowStraight = [1, 2, 3, 4, 13];
         let checkCardsLowStraight = sortedDeck.every((val, i) => val.order == lowStraight[i]);
 
-        for (let i = 0; i < sortedDeck.length - 1; i++){     
-            if (sortedDeck[i+1].order - 1 === sortedDeck[i].order){
+        for (let i = 0; i < sortedDeck.length - 1; i++) {
+            if (sortedDeck[i + 1].order - 1 === sortedDeck[i].order) {
                 checkCards.push(true);
-            }else{
+            } else {
                 checkCards.push(false);
             }
         }
         let checkCardsValues = checkCards.every(val => val === true);
 
-        if (checkCardsLowStraight){
+        if (checkCardsLowStraight) {
             cardValues.splice(0, 0, cardValues.pop());
             return {
                 val: true,
                 cardVal: checkedCardValuesToString
             }
-        }else if (!checkCardsValues){
+        } else if (!checkCardsValues) {
             return false;
-        }else{
-            return{
+        } else {
+            return {
                 val: true,
                 cardVal: checkedCardValuesToString
             }
         }
     }
     const threeOfKind = (sortedDeck) => {
-        if (checkedSameCardsInDeck.threeInDeck){
+        if (checkedSameCardsInDeck.threeInDeck) {
             return {
                 val: true,
                 sameCardVal: checkedSameCardsInDeck.sameCardsArray,
                 cardVal: cardValues
             }
-        }else{
+        } else {
             return false;
         }
-    } 
+    }
 
     const twoPairs = (sortedDeck) => {
-        if (checkedSameCardsInDeck.twoPairsInDeck){
+        if (checkedSameCardsInDeck.twoPairsInDeck) {
             return {
                 val: true,
                 sameCardVal: checkedSameCardsInDeck.sameCardsArray,
                 cardVal: cardValues
             }
-        }else{
+        } else {
             return false;
         }
-    } 
+    }
 
     const pair = (sortedDeck) => {
-        if (checkedSameCardsInDeck.pairInDeck){
+        if (checkedSameCardsInDeck.pairInDeck) {
             return {
                 val: true,
                 sameCardVal: checkedSameCardsInDeck.sameCardsArray,
                 cardVal: cardValues
             }
-        }else{
+        } else {
             return false;
         }
-    } 
+    }
 
     const highCard = () => {
-        let highestCard = cardValues[cardValues.length-1];
+        let highestCard = cardValues[cardValues.length - 1];
         return {
             val: true,
             highestCard: highestCard,
             cardVal: cardValues
-        }       
+        }
     }
-    
+
     const cardValuesToString = (cardValuesString) => {
-        return cardValuesString.join(' ');   
+        return cardValuesString.join(' ');
     }
 
     const checkColor = (sortedDeck) => {
         let firstColor = sortedDeck[0].color;
-        let sameColor = sortedDeck.every(card => card.color === firstColor);    
+        let sameColor = sortedDeck.every(card => card.color === firstColor);
         return {
             sameColor: sameColor,
             firstColor: firstColor
         }
     }
 
-    const checkNextCard = (sortedDeck) =>{
+    const checkNextCard = (sortedDeck) => {
         let checkCards = [];
-        for (let i = 0; i < sortedDeck.length - 1; i++){     
-            if (sortedDeck[i+1].order - 1 === sortedDeck[i].order){
+        for (let i = 0; i < sortedDeck.length - 1; i++) {
+            if (sortedDeck[i + 1].order - 1 === sortedDeck[i].order) {
                 checkCards.push(true);
-            }else{
+            } else {
                 checkCards.push(false);
             }
         }
         return checkCards.every(val => val === true);
     }
 
-    const sameCardsInDeck = (sortedDeck) =>{
+    const sameCardsInDeck = (sortedDeck) => {
         let pair = 0;
         let twoPairs = 0;
         let three = 0;
@@ -222,26 +222,26 @@ const combinantions = (sortedDeck) => {
         let full = 0;
         let sameCards = [];
 
-        for ( let i = 0; i < 4; i++ ) {
-            if ( i < 2 && !pair && !four && !three && sortedDeck[i].order == sortedDeck[i+3].order ) {
+        for (let i = 0; i < 4; i++) {
+            if (i < 2 && !pair && !four && !three && sortedDeck[i].order == sortedDeck[i + 3].order) {
                 four++;
-                sameCards.push(cardValues.slice(i, i+4).join(' '));
+                sameCards.push(cardValues.slice(i, i + 4).join(' '));
                 break;
-            }else if ( i < 3 && !four && !three && sortedDeck[i].order == sortedDeck[i+2].order ) {
-                if ( pair === 1 ) {
+            } else if (i < 3 && !four && !three && sortedDeck[i].order == sortedDeck[i + 2].order) {
+                if (pair === 1) {
                     full++;
                 }
                 three++;
-                sameCards.push(cardValues.slice(i, i+3).join(' '));
-                i = i+2;
+                sameCards.push(cardValues.slice(i, i + 3).join(' '));
+                i = i + 2;
             }
-            else if ( sortedDeck[i].order == sortedDeck[i+1].order ) {
-                if ( three === 1 ){
+            else if (sortedDeck[i].order == sortedDeck[i + 1].order) {
+                if (three === 1) {
                     full++;
-                }else if( pair === 1 ) {
+                } else if (pair === 1) {
                     twoPairs++;
                 }
-                sameCards.push(cardValues.slice(i, i+2).join(' '));
+                sameCards.push(cardValues.slice(i, i + 2).join(' '));
                 pair++;
             }
         }
@@ -260,7 +260,7 @@ const combinantions = (sortedDeck) => {
     const checkedSameCardsInDeck = sameCardsInDeck(sortedDeck);
     const checkedCardValuesToString = cardValuesToString(cardValues);
 
-    return{
+    return {
         royalFlush: royalFlush(sortedDeck),
         straightFlush: straightFlush(sortedDeck),
         fourOfKind: fourOfKind(sortedDeck),
@@ -290,37 +290,37 @@ const checkBestCombinantion = (sortedDecks) => {
     const green = 'color: #42f551; font-weight: bold;'
     const bold = 'font-weight: bold;'
     const white = 'color: #fff;'
-    switch (true){
+    switch (true) {
         case combinationOfHand.royalFlush.val:
-            console.log(`You have %cRoyal Flush >> ${combinationOfHand.royalFlush.cardVal} <<%c with ${combinationOfHand.royalFlush.color}`,red,white);
-        break;
+            console.log(`You have %cRoyal Flush >> ${combinationOfHand.royalFlush.cardVal} <<%c with ${combinationOfHand.royalFlush.color}`, red, white);
+            break;
         case combinationOfHand.straightFlush.val:
-            console.log(`You have %cStraight Flush >> ${combinationOfHand.straightFlush.cardVal} <<%c with ${combinationOfHand.straightFlush.color}`,red,white);
-        break;
+            console.log(`You have %cStraight Flush >> ${combinationOfHand.straightFlush.cardVal} <<%c with ${combinationOfHand.straightFlush.color}`, red, white);
+            break;
         case combinationOfHand.fourOfKind.val:
-            console.log(`You have %cFour of a Kind >> ${combinationOfHand.fourOfKind.sameCardVal} <<%c of hand: ${combinationOfHand.fourOfKind.cardVal}`,orange,white);
-        break;
+            console.log(`You have %cFour of a Kind >> ${combinationOfHand.fourOfKind.sameCardVal} <<%c of hand: ${combinationOfHand.fourOfKind.cardVal}`, orange, white);
+            break;
         case combinationOfHand.fullHouse.val:
-            console.log(`You have %cFull House >> ${combinationOfHand.fullHouse.cardVal} <<%c`,orange,white);
-        break;
+            console.log(`You have %cFull House >> ${combinationOfHand.fullHouse.cardVal} <<%c`, orange, white);
+            break;
         case combinationOfHand.flush.val:
-            console.log(`You have %cFlush >> ${combinationOfHand.flush.cardVal} <<%c with ${combinationOfHand.flush.color}`,orange,white);
-        break;
+            console.log(`You have %cFlush >> ${combinationOfHand.flush.cardVal} <<%c with ${combinationOfHand.flush.color}`, orange, white);
+            break;
         case combinationOfHand.straight.val:
-            console.log(`You have %cStraight >> ${combinationOfHand.straight.cardVal} <<%c`,yellow,white);
-        break;
+            console.log(`You have %cStraight >> ${combinationOfHand.straight.cardVal} <<%c`, yellow, white);
+            break;
         case combinationOfHand.threeOfKind.val:
-            console.log(`You have %cThree of a Kind >> ${combinationOfHand.threeOfKind.sameCardVal} <<%c of hand: ${combinationOfHand.threeOfKind.cardVal}`,yellow,white);
-        break;
+            console.log(`You have %cThree of a Kind >> ${combinationOfHand.threeOfKind.sameCardVal} <<%c of hand: ${combinationOfHand.threeOfKind.cardVal}`, yellow, white);
+            break;
         case combinationOfHand.twoPairs.val:
-            console.log(`You have %cTwo Pairs >> ${combinationOfHand.twoPairs.sameCardVal} <<%c of hand: ${combinationOfHand.twoPairs.cardVal}`,blue,white);
-        break;
+            console.log(`You have %cTwo Pairs >> ${combinationOfHand.twoPairs.sameCardVal} <<%c of hand: ${combinationOfHand.twoPairs.cardVal}`, blue, white);
+            break;
         case combinationOfHand.pair.val:
-            console.log(`You have %cPair >> ${combinationOfHand.pair.sameCardVal} <<%c of hand: ${combinationOfHand.pair.cardVal}`,green,white);
-        break;
+            console.log(`You have %cPair >> ${combinationOfHand.pair.sameCardVal} <<%c of hand: ${combinationOfHand.pair.cardVal}`, green, white);
+            break;
         case combinationOfHand.highCard.val:
-            console.log(`You have %cHigh Card >> ${combinationOfHand.highCard.highestCard} <<%c of hand: ${combinationOfHand.highCard.cardVal}`,bold,white);
-        break;
+            console.log(`You have %cHigh Card >> ${combinationOfHand.highCard.highestCard} <<%c of hand: ${combinationOfHand.highCard.cardVal}`, bold, white);
+            break;
 
         default:
             console.log('Nie ma nic');

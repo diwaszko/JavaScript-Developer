@@ -1,0 +1,8 @@
+<ul>
+    <li *ngFor="let item of news; let i=index">
+        <app-news-item [news]="item" [index]="i" [index]="i">
+        </app-news-item>
+    </li>
+</ul>
+
+<button (click)="ngOnInit()" *ngIf="news?.length <= 0">zainicjuj</button>

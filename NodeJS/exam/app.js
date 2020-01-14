@@ -25,8 +25,9 @@ const showListAllCommand = {
 };
 
 const addQuoteCommand = {
-    command: 'add',
-    describe: `Adds a new quote to the database. Example: \nnode app add 'quote text' 'author of quote' 'group of quote'`.yellow,
+    command: 'add <quote> <author> [group]',
+    aliases: ['a'],
+    describe: `Adds a new quote to the database.`.yellow,
     handler: async () => {
         try {
             await addQuote(process.argv[3], process.argv[4], process.argv[5]);
@@ -37,9 +38,9 @@ const addQuoteCommand = {
 };
 
 const deleteQuoteCommand = {
-    command: 'delete',
-    aliases: ['remove', 'erase'],
-    describe: 'Deleting a quote with selected ID from the database. Example: \nnode app delete 5'.red,
+    command: 'delete <id>',
+    aliases: ['remove', 'erase', 'd'],
+    describe: 'Deleting a quote with selected ID from the database.'.red,
     handler: async () => {
         try {
             await deleteQuote(process.argv[3]);
@@ -51,6 +52,7 @@ const deleteQuoteCommand = {
 
 const randomQuoteCommand = {
     command: 'random',
+    aliases: ['r'],
     describe: 'Random single quote from your list.'.brightBlue,
     handler: async () => {
         try {
@@ -62,9 +64,9 @@ const randomQuoteCommand = {
 };
 
 const listQuoteByGroupCommand = {
-    command: 'grouplist',
-    aliases: ['group', 'listgroup', 'showgroup'],
-    describe: `Shows quotes by filtered group. Example: \nnode app group 'group name'`.green,
+    command: 'group [group name]',
+    aliases: ['showgroup'],
+    describe: `Shows quotes by filtered group.`.green,
     handler: async () => {
         try {
             await listQuoteByGroup(process.argv[3]);
@@ -75,8 +77,8 @@ const listQuoteByGroupCommand = {
 };
 
 const addGroupCommand = {
-    command: 'addgroup',
-    describe: `Adding a group to quote by id number. Example: \nnode app addgroup 5 'my group name'`.yellow,
+    command: 'addgroup <id> <group name>',
+    describe: `Adding a group to quote by id number.`.yellow,
     handler: async () => {
         try {
             await addGroup(process.argv[3], process.argv[4]);
@@ -87,8 +89,8 @@ const addGroupCommand = {
 };
 
 const randomQuoteFromInternetCommand = {
-    command: 'newrandom',
-    aliases: ['randomnew', 'newquote'],
+    command: 'addrandom',
+    aliases: ['newquote', 'newrandom'],
     describe: 'Get new random quote from server and save it to your list.'.brightBlue,
     handler: async () => {
         try {
@@ -100,11 +102,11 @@ const randomQuoteFromInternetCommand = {
 };
 
 yargs
-.command(showListAllCommand)
-.command(addQuoteCommand)
-.command(deleteQuoteCommand)
-.command(randomQuoteCommand)
-.command(listQuoteByGroupCommand)
-.command(addGroupCommand)
-.command(randomQuoteFromInternetCommand)
-.argv
+    .command(showListAllCommand)
+    .command(addQuoteCommand)
+    .command(deleteQuoteCommand)
+    .command(randomQuoteCommand)
+    .command(listQuoteByGroupCommand)
+    .command(addGroupCommand)
+    .command(randomQuoteFromInternetCommand)
+    .argv

@@ -1,0 +1,12 @@
+<label>
+    Tytul:
+    <input [(ngModel)]="newTitle" type="text" />
+</label>
+<br />
+<label>
+    <textarea [(ngModel)]="newTitle"></textarea>
+</label>
+<br />
+<button (click)="addNewItem()" [disabled]="!newTitle">
+    dodaj
+</button>
