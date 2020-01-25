@@ -22,6 +22,6 @@ export class NewsListComponent implements OnInit {
     this.news = [];
     setTimeout(() => {
       this.news = this.newsService.getNewsList();
-    }, 1000);
+    }, 300);
   }
 }

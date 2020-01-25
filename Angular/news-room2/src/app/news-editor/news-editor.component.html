@@ -1,12 +1,27 @@
-<label>
-    Tytul:
-    <input [(ngModel)]="newTitle" type="text" />
-</label>
-<br />
-<label>
-    <textarea [(ngModel)]="newTitle"></textarea>
-</label>
-<br />
-<button (click)="addNewItem()" [disabled]="!newTitle">
-    dodaj
-</button>
+    <div class="row comment-row">
+        <div class="col-md-12 col-sm-12">
+            <div class="col-md-3 col-sm-12 text-center">      
+                <label>
+                    Twój avatar:
+                    <img [src]="newImage"/>
+                </label>
+            </div>
+            <div class="col-md-7 col-sm-12 text-left"> 
+                <div>          
+                <label class="label-full-width">
+                    Tytuł:<br>
+                    <input class="input-field" style="width:100%;" [(ngModel)]="newTitle" type="text" />
+                </label></div> 
+                <br>
+                <div>   
+                <label class="label-full-width">
+                    Treść komentarza:<br>
+                    <textarea class="input-field" [(ngModel)]="newContent"></textarea>
+                </label>
+            </div> 
+            </div>
+            <div class="col-md-2 col-sm-12 text-center h-100"> 
+                <button type="button" class="btn btn-success"  (click)="addNewItem()" [disabled]="!newContent || !newContent">dodaj</button>
+            </div>
+        </div>
+    </div>

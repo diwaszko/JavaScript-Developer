@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Container from '../Container/Container';
-
+import styles from '../../App.module.css'; 
 
 const Menu = () => {
     return (
-        <div>
+        <div className={styles.navbar}>
             <Container>
-                <ul className="nav">
+                <ul className={styles.nav}>
                     <li><NavLink exact to="/">Home</NavLink></li>
                     <li><NavLink to="/catalog">Catalog</NavLink></li>
                     <li><NavLink to="/about">About</NavLink></li>

@@ -16,6 +16,9 @@ html, body {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    background-color: red;
+    width: 500px;
+    height: 500px;
 }
 
 .header-big {
@@ -81,6 +84,7 @@ footer {
 
 .product {
     width: 25%;
+    max-width: 25%;
     background: white;
     margin: 1%;
     text-align: center;

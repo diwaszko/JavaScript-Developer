@@ -1,0 +1,13 @@
+.comment-row .btn {
+    float: right;
+    width:100%;   
+    margin-top: auto;
+    margin-bottom: auto;
+}
+ .label-full-width{
+    width: 100%; 
+ }
+ .input-field{
+    width: 100%;  
+ }
+ 

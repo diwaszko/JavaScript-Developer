@@ -1,5 +1,5 @@
 import React from 'react';
-// import styles from './App.modules.css'; // to style, których używa się jako kluczy w określonych modułach
+// import styles from './App.module.css'; // to style, których używa się jako kluczy w określonych modułach (NAZWA MUSI BYĆ App.module.css !! bez s)
 // import './App.css'; {/* są to style globalne - można użyć wszedzie z pliku css*/ }
 import styled from 'styled-components'; //importuje biblioteke, ktora pozwala stylowac w js (trzeba zainstalować npm install --save styled-components) https://www.styled-components.com/
 

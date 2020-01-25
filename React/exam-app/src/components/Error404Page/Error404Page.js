@@ -1,13 +1,18 @@
 import React from "react";
+import HeaderBig from "../HeaderBig/HeaderBig";
+import HeaderSmall from "../HeaderSmall/HeaderSmall";
+import Container from "../Container/Container";
 
 const Error404Page = () => {
   return (
     <div>
-      <h3>Error 404. Page is not exist.</h3>
-      <p>
-        Takiej strony nie ma.
-      </p>
-      <button><a href="/">Wróć do strony głównej</a></button>
+      <Container>
+        <HeaderBig name="Error 404. Page is not exist." />
+        <p>
+          <HeaderSmall name="Takiej strony nie ma."/>
+        </p>
+        <a href="/">Wróć do strony głównej</a>
+      </Container>
     </div>
   )
 };

@@ -4,6 +4,7 @@ import {
 import { NewsData } from '../news-data';
 import { NewsService } from '../news.service';
 
+
 @Component({
   selector: 'app-news-item',
   templateUrl: './news-item.component.html',
@@ -18,10 +19,16 @@ export class NewsItemComponent {
 
   constructor(private newsService: NewsService) { }
 
-  imageUrl = 'https://d-pt.ppstatic.pl/k/r/1/76/c4/5d164a4f796d2_p.jpg?1574765877';
+  // imageUrl = 'https://d-pt.ppstatic.pl/k/r/1/76/c4/5d164a4f796d2_p.jpg?1574765877';
 
 
   remove() {
     this.newsService.removeItem(this.index)
+  }
+  plus() {
+    this.news.counter++;
+  }
+  minus() {
+    this.news.counter--;
   }
 }

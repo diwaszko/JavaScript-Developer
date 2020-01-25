@@ -1,5 +1,23 @@
-<div class="news-item">
-    <h3>{{news.title}}</h3>
-    <img [src]="imageUrl" />
-    <button (click)="remove()">usun</button>
+<div class="row">
+    <div class="col-md-12 col-sm-12 news-item">
+        <div class="col-md-3 col-sm-12 text-center">
+            <img class="rounded" alt="avatar" [src]="news.imageUrl" />
+        </div>
+        <div class="col-md-7 col-sm-12">               
+            <h3>{{news.title}}</h3>
+            <p>{{news.content}}</p>
+
+        </div>
+        <div class="col-md-2 col-sm-12 text-center h-100">
+
+      
+        <button class="btn btn-success btn-counter" (click)="plus()">+</button>
+        <button class="btn btn-danger btn-counter" (click)="minus()">-</button>
+        <h3 [class.red]="news.counter < 0"
+            [class.green]="news.counter > 0"
+            [class.gray]="news.counter == 0"
+        >{{ news.counter }}</h3>       
+            <div type="button" class="btn btn-danger btn-remove" (click)="remove()">usuń</div>
+        </div>
+    </div>
 </div>

@@ -1,22 +1,24 @@
 import React from "react";
+import HeaderBig from "../HeaderBig/HeaderBig";
+import Container from "../Container/Container";
 
 const AboutPage = () => (
   <div>
-    <h3>About Page</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia quam
-      id justo hendrerit mollis. Sed feugiat erat ac tortor vehicula, et gravida
-      ante tincidunt. Quisque iaculis urna a libero consequat rutrum. Proin orci
-      felis, bibendum sit amet ex a, elementum pretium orci. Nunc et felis eu
-      risus posuere sollicitudin sit amet a elit. Curabitur quis ex vitae odio
-      rhoncus auctor consectetur vitae velit. Quisque sagittis, arcu nec
-      convallis elementum, est odio luctus nisi, in pretium massa velit et eros.
-      Nullam suscipit tortor vel justo tempus, accumsan auctor urna rutrum.
-      Curabitur ut iaculis purus. Vestibulum euismod urna non leo vehicula
-      tincidunt. Nullam nulla lacus, porttitor vitae facilisis quis, blandit sed
-      leo. In mattis metus eu magna eleifend bibendum. Nam eget sapien ut nibh
-      interdum aliquam. Nulla eget augue lorem.
-    </p>
+  <Container>
+    <HeaderBig name="About" />
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque odio pharetra, rhoncus velit eget,
+        feugiat magna. Integer ac augue aliquam, tempor diam nec, pulvinar velit. Pellentesque et sem a diam fringilla
+        egestas nec vel metus. Etiam ac convallis leo. Vivamus vitae volutpat nisl, mollis hendrerit libero. Vivamus sed
+        lobortis ligula. Suspendisse a nisi erat. Donec mi ante, condimentum nec efficitur non, egestas et lorem. Duis
+        at urna ut mauris fringilla dignissim at in odio. Ut consectetur purus et maximus aliquam. Sed consectetur diam
+        quis accumsan condimentum. Proin porta condimentum velit quis convallis.</p>
+    <p>Donec mauris tellus, lobortis id dignissim id, luctus ut purus. Etiam rutrum nibh consectetur purus tincidunt
+        scelerisque. Etiam faucibus volutpat lectus, quis blandit diam consectetur ac. In hac habitasse platea dictumst.
+        Sed rhoncus mattis condimentum. Vivamus sit amet mi volutpat enim tincidunt fringilla. Etiam porttitor dolor
+        eleifend felis consectetur facilisis. Ut pulvinar sollicitudin erat, nec malesuada nunc scelerisque nec. Aliquam
+        vel dolor diam. Cras efficitur dignissim justo, ac tristique tellus pellentesque pharetra. Quisque pharetra
+        lectus molestie, posuere lectus eget, tempor justo.</p>
+  </Container>
   </div>
 );
 

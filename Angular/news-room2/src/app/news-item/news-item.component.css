@@ -1,13 +1,25 @@
-.news-item {
-    border: 1px dotted salmon;
+.news-item{
     margin: 5px;
     padding: 5px;
 }
-
-.news-item img {
-    width: 100px;
+.red {
+    color: red;
 }
-
-.news-item button {
-    float: right;
+.green {
+    color: green;
+}
+.gray {
+    color: gray;
+}
+.btn-remove{
+    width:100%;  
+}
+.btn-counter{
+    width:20%;   
+}
+.btn-success.btn-counter{
+    margin-right:5px;   
+}
+h3{
+    margin-top: 10px;
 }

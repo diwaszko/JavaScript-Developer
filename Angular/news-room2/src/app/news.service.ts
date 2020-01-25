@@ -8,9 +8,9 @@ export class NewsService {
   public onChange = new EventEmitter();
 
   private news: NewsData[] = [
-    new NewsData('123'),
-    new NewsData('345'),
-    new NewsData('sads')
+    new NewsData('Lorem ipsum dolor', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'https://picsum.photos/id/101/200/200', Math.floor(Math.random() * 15) - 5),
+    new NewsData('Ut enim ad minim veniam', ' Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', 'https://picsum.photos/id/102/200/200', Math.floor(Math.random() * 15) - 5),
+    new NewsData('Duis aute irure dolor', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ', 'https://picsum.photos/id/103/200/200', Math.floor(Math.random() * 15) - 5)
   ];
 
   public getNewsList(): NewsData[] {
@@ -20,8 +20,9 @@ export class NewsService {
     this.news.splice(i, 1);
     this.onChange.emit();
   }
-  addItem(title: string) {
-    this.news.push(new NewsData(title));
+  addItem(title: string, content: string, imageUrl: string,counter: number) {
+    this.news.push(new NewsData(title,content,imageUrl,counter));
+
     this.onChange.emit();
   }
 }

@@ -1,32 +1,42 @@
-import React, { useRef, useEffect } from "react";
+import React, { useState } from "react";
+import styles from '../../App.module.css';
+import HeaderBig from "../HeaderBig/HeaderBig";
+import Container from "../Container/Container";
+import FilterHeader from "./FilterHeader/FilterHeader";
+import FilterProducts from "./FilterProducts/FilterProducts";
+import Manufacturer from "./Manufacturer/Manufacturer";
+import Search from "./Search/Search";
+import ClearFilters from "./ClearFilters/ClearFilters";
 
-const ContactPage = () => {
-  const inputRef = useRef();
-
-  useEffect(() => {                 // focus (wpisywanie) w inpucie od razu po wejściu na podstronę
-    inputRef.current.focus();
-  }, [])
-  const handleClick = () => {
-    const email = inputRef.current.value;
-    alert(`Wysłano! ${email}`);
-    inputRef.current.vaue = '';   // czyszczenie inputa po wysłaniu
-  }
+const CatalogPage = () => {
+  const [filterRadio, setFilterRadio] = useState('All');
+  const [searchProduct, setSearchProduct] = useState('');
+  
   return (
     <div>
-      <h3>Contact Page</h3>
-      <div>
-        <h4>Lets talk!</h4>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia
-          quam id justo hendrerit mollis. Sed feugiat erat ac tortor vehicula, et
-          gravida ante tincidunt. Quisque iaculis urna a libero consequat rutrum.
-      </p>
-        <label>Email</label>
-        <input ref={inputRef} type="text" />
-        <button onClick={handleClick}>SEND</button>
-      </div>
+      <Container>
+        <HeaderBig name="Catalog" />
+        <div className={styles.catalog}>
+            <div className={styles['column-left']}>
+                <div className={styles.filter}>
+                    <div className={styles['filter-header']}>
+                        <FilterHeader name="Search" />
+                        <ClearFilters textName="clear" checkClear={() => {setFilterRadio('All'); setSearchProduct('');}} />
+                    </div>
+                    <Search typedText={searchProduct} checkText={(text) => setSearchProduct(text.target.value)} />
+                    <FilterHeader name="Manufacturer" />
+                    <Manufacturer manufacturer="All" labelName="All" checked={filterRadio === 'All'} checkRadio={() => setFilterRadio('All')} />
+                    <Manufacturer manufacturer="Apple" labelName="Apple"checked={filterRadio === 'Apple'} checkRadio={() => setFilterRadio('Apple')} />
+                    <Manufacturer manufacturer="Dell" labelName="Dell" checked={filterRadio === 'Dell'} checkRadio={() => setFilterRadio('Dell')}/>
+                </div>
+            </div>
+          <div className={styles['column-right']}>
+                  <FilterProducts manufacturer={filterRadio} typedText={searchProduct} />
+          </div>
+        </div>
+        </Container>
     </div>
   );
 };
 
-export default ContactPage;
+export default CatalogPage;

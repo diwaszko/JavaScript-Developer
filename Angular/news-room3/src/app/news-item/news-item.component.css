@@ -1,0 +1,13 @@
+.news-item {
+    border: 1px dotted salmon;
+    margin: 5px;
+    padding: 5px;
+}
+
+.news-item img {
+    width: 100px;
+}
+
+.news-item button {
+    float: right;
+}

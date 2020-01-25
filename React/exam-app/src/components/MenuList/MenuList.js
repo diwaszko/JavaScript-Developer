@@ -7,10 +7,8 @@ import CatalogPage from '../CatalogPage/CatalogPage';
 import HomePage from '../HomePage/HomePage';
 import Error404Page from '../Error404Page/Error404Page';
 
-
 function MenuList() {
     return (
-
         <Router>
             <div>
                 <Menu />
