@@ -16,3 +16,22 @@
 
 // Prettier             - formatter kodu
 // w setting -> fromat on save  - formatuje przy zapisie
+
+
+
+// my-app7 
+// instalacja proto types
+// npm i prop-types
+// instalacja styleguidist
+// npm install --save-dev react-styleguidist
+// trzeba dopisac do package.json skrypty
+// "styleguide": "styleguidist server",
+// "styleguide:build": "styleguidist build"
+// z linku "Usage" https://react-styleguidist.js.org/docs/cli.html
+// odpalić builda komendą:  npm run styleguide   (kliknac w local link z terminalu)
+
+// w katalogu components/header/Button.js trzeba mniej więcej to tak zrobić - obecny kod to pseudokod 
+// jest to zadanie ostatnie z githuba 
+// Zadanie 4
+// Utwórz komponent Button, który będzie konfigurowalny za pomocą propsów(np. możliwość zmiany koloru, wielkości).
+// Opisz PropTypes dla tego komponentu oraz przygotuj dokumentacje z przykładami użycia.

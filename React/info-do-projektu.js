@@ -7,3 +7,6 @@
 // musi działać na chrome i firefox
 // CZWARTEK PRZED ZAJĘCIAMI DO PÓŁNOCY WYSŁAĆ, A JEŻELI SIĘ NIE WYROBI TO BĘDZIE TRZEBA PREZENTOWAĆ NA ZAJĘCIACH
 // wysłać repozytorium na maila przemyslaw.wiszowaty@softwarehut.com
+
+
+// biblioteka http-server do utworzenia servera lokalnie wzgledem katalogu w ktorym jestesmy
