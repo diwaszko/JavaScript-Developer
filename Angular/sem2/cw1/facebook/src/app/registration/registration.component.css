@@ -1,0 +1,23 @@
+form{
+    border: solid 1px lightblue;
+    padding: 10px;
+}
+
+label{
+    display: inline-block;
+    width: 100px;
+    margin-top: 10px;
+}
+
+input[type="text"]{
+    border: solid 1px lightblue;
+}
+
+.ng-invalid{
+    border: 2px solid red !important;
+}
+
+.error{
+    color:red;
+    font-size: 12px;
+}

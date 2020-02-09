@@ -1,0 +1,25 @@
+<form #myForm="ngForm" (ngSubmit)='register(myForm.value)'>
+    <label for="firstname">Imię:</label>
+    <input id="firstname" name="firstname" type="text" placeholder="Twoje imię" [(ngModel)]="user.firstname" required />
+    <div class="error" *ngIf="myForm.controls?.firstname?.errors?.required">pole wymagane</div>
+    <br>
+    <label for="surname">Nazwisko:</label>
+    <input id="surname" name="surname" type="text" placeholder="Twoje nazwisko" ngModel required />
+    <div class="error" *ngIf="myForm.controls?.surname?.errors?.required">pole wymagane</div>
+    <br>
+    <label for="youremail">E-mail:</label>
+    <input id="youremail" name="youremail" type="text" placeholder="Twój email" ngModel email #youremail="ngModel" />
+    <div class="error" *ngIf="youremail.hasError('youremail')">pole wymagane</div>
+    <br>
+    <label for="tel">Telefon:</label>
+    <!-- email ostatni parametr to walidacja, że wymagana jest małpa -->
+    <input id="tel" name="tel" type="text" placeholder="nr. telefonu" ngModel pattern="[0-9]*" /><br>
+    <label> Płeć: </label>
+    <label for="man"><br>
+        <input id="man" name="gender" type="radio" value="1" ngModel />Kobieta</label>
+    <label for="female"><br>
+        <input id="female" name="gender" type="radio" value="2" ngModel />Mężczyzna</label><br><br>
+
+    <input type="reset" value="Reset">
+    <input type="submit" [disabled]='myForm.invalid' value="Submit">
+</form>
