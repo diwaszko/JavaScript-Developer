@@ -6,20 +6,20 @@ class NumberToDigits {
     constructor(userNumber) {
         this.userNumber = userNumber;
     }
-    get splitNumbers () {
+    get splitNumbers() {
         let num = this.userNumber;
-            let numArray = num.split('');
-            let convertedNums = [];
-            for (let i = 0; i < numArray.length; i++) {
-                convertedNums[i] = numArray[i] * 1;
-                if (isNaN(convertedNums[i])) {
-                    convertedNums.splice(i, 1);
-                }
-            };
+        let numArray = num.split('');
+        let convertedNums = [];
+        for (let i = 0; i < numArray.length; i++) {
+            numArray[i] = numArray[i] * 1;
+            if (!isNaN(numArray[i])) {
+                convertedNums.push(numArray[i])
+            }
+        };
         return convertedNums;
     }
 }
 
-let message = new NumberToDigits('s5fdf343fd');
+let message = new NumberToDigits('s5fdf3efwfewe4f#@3E$#$888#wq3fd');
 
 console.log(message.splitNumbers);
