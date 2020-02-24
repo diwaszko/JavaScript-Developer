@@ -3,11 +3,11 @@
 // Try solving this without creating a copy of the list.
 
 
-let list = [1,2,3,4,5,6];
+let list = [1, 2, 3, 4, 5, 6];
 console.log('before: ' + list);
 const rotateList = (list, roateTimes) => {
     // list.push(list.splice(0, roateTimes));
-    for ( let i = 0; i < roateTimes; i++ ) {
+    for (let i = 0; i < roateTimes; i++) {
         list.push(list.shift());
     }
     return list.flat();

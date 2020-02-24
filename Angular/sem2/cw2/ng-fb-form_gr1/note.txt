@@ -1,0 +1,5 @@
+// isntalacja node modules              npm install
+// utworzenie komponentu w glownym katalogu         ng g c react-registration
+// skopiowanie z kataolgu registration zawartosci plików html i css
+// usunąć z pliku app-react-registration.html: ngModel, #id='ngModel' oraz divy z komunikatami o wymaganych polach
+// zmiana w pliku app.component.html z <app-registration> na <app-react-registration>

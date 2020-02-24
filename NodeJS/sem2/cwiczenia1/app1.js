@@ -16,4 +16,4 @@ server.listen(4700);
 
 
 // npm i nodemon
-// npx nodemon app7             - uruchamianie servera z nodemon (dzieki temu nie trzeba tworzyc go przy zmianach od poczatku za kazdym razem)
+// npx nodemon app7             - uruchamianie servera z nodemon (dzieki temu nie trzeba tworzyc go przy zmianach od poczatku za kazdym razemgoi)
